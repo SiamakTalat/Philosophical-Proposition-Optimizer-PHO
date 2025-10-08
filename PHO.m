@@ -28,7 +28,7 @@ for Iter = 1:MaxIter
         [~,idsorted]=sort(Obj);
         idsorted(idsorted==i)=[];
         jkid=randperm(fix((nPop-1)/2),2)+ [0,fix((nPop-1)/2)];
-        jk=idsorted(jkid);
+        jk=idsorted(jkid)';
         
         % Philosophical State
         m = [i jk];
