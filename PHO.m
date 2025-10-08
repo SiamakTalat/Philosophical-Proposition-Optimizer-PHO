@@ -25,8 +25,10 @@ end
 for Iter = 1:MaxIter
     for i = 1:nPop
         % Philisopical Selection
-        n = [1:i-1 i+1:nPop];
-        jk=n(randperm(nPop-1,2));
+        [~,idsorted]=sort(Obj);
+        idsorted(idsorted==i)=[];
+        jkid=randperm(fix((nPop-1)/2),2)+ [0,fix((nPop-1)/2)];
+        jk=idsorted(jkid);
         
         % Philosophical State
         m = [i jk];
